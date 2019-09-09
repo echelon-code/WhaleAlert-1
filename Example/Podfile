@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'WhaleAlert_Example' do
+  pod 'WhaleAlert', :path => '../'
+
+  target 'WhaleAlert_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
