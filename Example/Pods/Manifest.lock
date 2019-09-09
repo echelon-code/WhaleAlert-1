@@ -1,0 +1,16 @@
+PODS:
+  - WhaleAlert (0.1.0)
+
+DEPENDENCIES:
+  - WhaleAlert (from `../`)
+
+EXTERNAL SOURCES:
+  WhaleAlert:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  WhaleAlert: 153cac4770e8c195a98d5946299557738d5781fa
+
+PODFILE CHECKSUM: 0eb536002a0cd9b5b0875f2a190c0cc3d7cb48c3
+
+COCOAPODS: 1.7.2

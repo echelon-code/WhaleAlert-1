@@ -1,0 +1,6 @@
+framework module WhaleAlert {
+  umbrella header "WhaleAlert-umbrella.h"
+
+  export *
+  module * { export * }
+}
