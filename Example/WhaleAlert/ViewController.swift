@@ -7,18 +7,70 @@
 //
 
 import UIKit
+import WhaleAlert
 
 class ViewController: UIViewController {
-
+    
+    // MARK: - IBOutlet
+    
+    @IBOutlet weak var buttonStackView: UIStackView!
+    
+    // MARK: - Attributes
+    
+    private lazy var whaleAlert: WhaleAlert = {
+        return WhaleAlert(apiKey: "your-api-key", delegate: self)
+    }()
+    
+    // MARK: - IBAction
+    
+    @IBAction private func getStatus() {
+        whaleAlert.getStatus()
+    }
+    
+    @IBAction private func getTransaction() {
+        whaleAlert.getTransaction(withHash: "4410c8d14ff9f87ceeed1d65cb58e7c7b2422b2d7529afc675208ce2ce09ed7d",
+                                  fromBlockchain: .bitcoin)
+    }
+    
+    @IBAction private func getAllTransactions() {
+        whaleAlert.getAllTransactions()
+    }
+    
+    // MARK: - Private Functions
+    
+    private func setupUI() {
+        buttonStackView.subviews.forEach {
+            $0.layer.cornerRadius = 4.0
+            $0.layer.borderWidth = 1.0
+            $0.layer.borderColor = UIColor.darkGray.cgColor
+        }
+    }
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setupUI()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
 }
 
+// MARK: - WhaleAlertProtocol
+
+extension ViewController: WhaleAlertProtocol {
+    
+    func whaleAlertDidReceiveStatus(_ status: Status?) {
+        debugPrint("whaleAlertDidReceiveStatus: \(String(describing: status)).")
+    }
+    
+    func whaleAlertDidReceiveTransaction(_ transaction: Transaction?) {
+        debugPrint("whaleAlertDidReceiveTransaction: \(String(describing: transaction)).")
+    }
+    
+    func whaleAlertDidReceiveAllTransactions(_ transactions: [Transaction]?) {
+        debugPrint("whaleAlertDidReceiveAllTransactions: \(String(describing: transactions)).")
+    }
+}
