@@ -17,7 +17,7 @@ public protocol WhaleAlertProtocol: AnyObject {
     /// - Parameter transaction: Optional `Transaction` object.
     func whaleAlertDidReceiveTransaction(_ transaction: Transaction?)
     
-    /// Client did receive response with optional array of `Transaction` object.
+    /// Client did receive response with optional array of `Transaction` objects.
     /// - Parameter transactions: Optional array of `Transaction` objects.
     func whaleAlertDidReceiveAllTransactions(_ transactions: [Transaction]?)
 }
