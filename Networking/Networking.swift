@@ -8,6 +8,10 @@
 import Foundation
 
 protocol NetworkingProtocol: AnyObject {
+    
+    /// Client did receive response with optional `Data` and `Error` objects.
+    /// - Parameter data: Optional `Data` objects.
+    /// - Parameter error: Optional `Error` object.
     func didReceiveData(_ data: Data?, error: Error?)
 }
 
@@ -15,8 +19,10 @@ class Networking {
     
     // MARK: - Attributes
     
+    /// Networking delegate.
     weak var delegate: NetworkingProtocol?
     
+    /// User private API key.
     private let apiKey: String?
     
     enum Endpoint: CustomStringConvertible {
@@ -49,18 +55,26 @@ class Networking {
     
     // MARK: - Initialization
     
+    /// Initializes networking helper with personal API key.
+    /// - Parameter apiKey: WhaleAlert API key.
     init(apiKey: String) {
         self.apiKey = apiKey
     }
     
     // MARK: - Functions
     
+    /// Get the current status of Whale Alert.
+    /// - Parameter block: Block returning an optional `Status` object.
     func getStatus(_ block: @escaping Callbacks.WhaleAlertStatusCallback) {
         request(.status) { (status: Status?, error: Error?) in
             block(status)
         }
     }
     
+    /// Returns the transaction from a specific blockchain by hash.
+    /// - Parameter hash: Transaction hash.
+    /// - Parameter blockchain: `BlockchainType` value.
+    /// - Parameter block: Block returning an optional `Transaction` object.
     func getTransaction(withHash hash: String,
                         fromBlockchain blockchain: WhaleAlert.BlockchainType,
                         block: @escaping Callbacks.WhaleAlertTransactionCallback) {
@@ -70,6 +84,8 @@ class Networking {
         }
     }
     
+    /// Returns transactions with timestamp after a set start time.
+    /// - Parameter block: Block returning an optional array of `Transaction` objects.
     func getAllTransactions(_ block: @escaping Callbacks.WhaleAlertAllTransactionsCallback) {
         request(.allTransactions) { (transactions: [Transaction]?, error: Error?) in
             block(transactions)
