@@ -79,7 +79,7 @@ class Networking {
                         fromBlockchain blockchain: WhaleAlert.BlockchainType,
                         block: @escaping Callbacks.WhaleAlertTransactionCallback) {
         
-        request(.transaction(hash, blockchain.rawValue)) { (transaction: Transaction?, error: Error?) in
+        request(.transaction(blockchain.rawValue, hash)) { (transaction: Transaction?, error: Error?) in
             block(transaction)
         }
     }
