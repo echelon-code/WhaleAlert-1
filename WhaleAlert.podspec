@@ -8,35 +8,19 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WhaleAlert'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of WhaleAlert.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.version          = '1.0.0'
+  s.summary          = 'Swift implementation of the WhaleAlert API.'
+  
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Whale Alert's API allows you to retrieve live and historical transaction data from major blockchains. Currently supported are Bitcoin, Ethereum, Ripple, NEO, EOS, Stellar and Tron. More blockchains will be added in the future. Please read our terms and conditions before using the API.
                        DESC
 
-  s.homepage         = 'https://github.com/Ryan Cohen/WhaleAlert'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/imryan/WhaleAlert'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Ryan Cohen' => 'notryancohen@gmail.com' }
-  s.source           = { :git => 'https://github.com/Ryan Cohen/WhaleAlert.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/imryan/WhaleAlert.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/notryancohen'
 
-  s.ios.deployment_target = '8.0'
-
+  s.ios.deployment_target = '11.0'
   s.source_files = 'WhaleAlert/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'WhaleAlert' => ['WhaleAlert/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
