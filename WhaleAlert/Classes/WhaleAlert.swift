@@ -8,8 +8,17 @@
 import Foundation
 
 public protocol WhaleAlertProtocol: AnyObject {
+    
+    /// Client did receive response with optional `Status` object.
+    /// - Parameter status: Optional `Status` object.
     func whaleAlertDidReceiveStatus(_ status: Status?)
+    
+    /// Client did receive response with optional `Transaction` object.
+    /// - Parameter transaction: Optional `Transaction` objects.
     func whaleAlertDidReceiveTransaction(_ transaction: Transaction?)
+    
+    /// Client did receive response with optional array of `Transaction` object.
+    /// - Parameter transactions: Optional array of `Transaction` objects.
     func whaleAlertDidReceiveAllTransactions(_ transactions: [Transaction]?)
 }
 
@@ -20,17 +29,17 @@ public class WhaleAlert {
     /// Delegate to receive request callbacks.
     weak var delegate: WhaleAlertProtocol?
     
-    /// Networking helper
+    /// Networking helper.
     private let networking: Networking
     
-    /// Supported blockchains
+    /// Supported blockchains.
     public enum BlockchainType: String {
         case bitcoin, ethereum, ripple, stellar, neo, eos, tron
     }
     
     // MARK: - Initialization
     
-    /// Initialize with API key
+    /// Initialize with API key.
     ///
     /// - Parameters:
     ///   - apiKey: WhaleAlert API key.
@@ -59,7 +68,7 @@ public class WhaleAlert {
     
     /// Returns the transaction from a specific blockchain by hash.
     /// If a transaction consists of multiple OUTs, it is split into multiple transactions,
-    /// provided the corresponding OUT is of high enough value (>=$10 USD).
+    /// provided the corresponding OUT is of high enough value (>= $10 USD).
     ///
     /// - Parameters:
     ///   - hash: The hash of the transaction to return.
