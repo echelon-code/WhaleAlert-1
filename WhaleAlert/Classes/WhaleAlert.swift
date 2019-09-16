@@ -46,6 +46,7 @@ public class WhaleAlert {
     ///   - delegate: Delegate to receive request callbacks.
     public init(apiKey: String, delegate: WhaleAlertProtocol?) {
         self.networking = Networking(apiKey: apiKey)
+        self.delegate = delegate
     }
     
     // MARK: - Functions
