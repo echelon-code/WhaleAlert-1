@@ -77,18 +77,34 @@ class Networking {
     /// - Parameter block: Block returning an optional `Transaction` object.
     func getTransaction(withHash hash: String,
                         fromBlockchain blockchain: WhaleAlert.BlockchainType,
-                        block: @escaping Callbacks.WhaleAlertTransactionCallback) {
+                        block: @escaping Callbacks.WhaleAlertTransactionsCallback) {
         
-        request(.transaction(blockchain.rawValue, hash)) { (transaction: Transaction?, error: Error?) in
-            block(transaction)
+        request(.transaction(blockchain.rawValue, hash)) { (transactionResponseData: TransactionResponseData?, error: Error?) in
+            block(transactionResponseData?.transactions)
         }
     }
     
     /// Returns transactions with timestamp after a set start time.
     /// - Parameter block: Block returning an optional array of `Transaction` objects.
-    func getAllTransactions(_ block: @escaping Callbacks.WhaleAlertAllTransactionsCallback) {
-        request(.allTransactions) { (transactions: [Transaction]?, error: Error?) in
-            block(transactions)
+    func getAllTransactions(fromDate: Date,
+                            toDate: Date? = nil,
+                            cursor: Int? = nil,
+                            minUSDValue: Int? = nil,
+                            limit: Int? = 100,
+                            currency: String? = nil,
+                            block: @escaping Callbacks.WhaleAlertTransactionsCallback) {
+        
+        let parameters: [String: Any?] = [
+            "start": Int(fromDate.timeIntervalSince1970),
+            "end": (toDate != nil) ? Int(toDate!.timeIntervalSince1970) : nil,
+            "cursor": cursor,
+            "min_value": minUSDValue,
+            "limit": limit,
+            "currency": currency
+        ]
+        
+        request(.allTransactions, parameters: parameters) { (transactionResponseData: TransactionResponseData?, error: Error?) in
+            block(transactionResponseData?.transactions)
         }
     }
 }
@@ -97,27 +113,31 @@ class Networking {
 
 extension Networking {
     
-    private func request<T: Decodable>(_ endpoint: Endpoint, completion: @escaping (_ object: T?, _ error: NetworkingError?) -> ()) {
+    private func request<T: Decodable>(_ endpoint: Endpoint, parameters: [String: Any?]? = nil, completion: @escaping (_ object: T?, _ error: NetworkingError?) -> ()) {
         guard let apiKey = apiKey else {
             completion(nil, .missingAPIKey)
             return
         }
         
-        var request: URLRequest = URLRequest(url: URL(string: endpoint.description)!)
-        request.setValue(apiKey, forHTTPHeaderField: "X-WA-API-KEY")
+        let urlString: String = "\(endpoint.description)?api_key=\(apiKey)"
+        var urlComponents: URLComponents = URLComponents(string: urlString)!
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
+        if let parameters = parameters {
+            let cleanedParameters = parameters.compactMapValues({ $0 })
+            
+            for parameter in cleanedParameters {
+                let queryItem: URLQueryItem = URLQueryItem(name: parameter.key, value: String(describing: parameter.value))
+                urlComponents.queryItems?.append(queryItem)
+            }
+        }
+        
+        URLSession.shared.dataTask(with: URLRequest(url: urlComponents.url!)) { (data, response, error) in
             guard let data = data else {
                 completion(nil, .missingResponse)
                 return
             }
             
             if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                guard let jsonObject = jsonObject else {
-                    completion(nil, nil)
-                    return
-                }
-                
                 if let result = jsonObject["result"] as? String, let message = jsonObject["message"] as? String {
                     completion(nil, .other("Result: \(result) | Message: \(message)."))
                 }

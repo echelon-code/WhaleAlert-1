@@ -1,5 +1,5 @@
 PODS:
-  - WhaleAlert (0.1.0)
+  - WhaleAlert (1.0.0)
 
 DEPENDENCIES:
   - WhaleAlert (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  WhaleAlert: 153cac4770e8c195a98d5946299557738d5781fa
+  WhaleAlert: 22bd948388470f7fdf7ca0f7259fa0a42d83fcb7
 
-PODFILE CHECKSUM: 0eb536002a0cd9b5b0875f2a190c0cc3d7cb48c3
+PODFILE CHECKSUM: 926ff071ff64fe410ae08ae7293e8d8bbf13b7d9
 
 COCOAPODS: 1.7.2

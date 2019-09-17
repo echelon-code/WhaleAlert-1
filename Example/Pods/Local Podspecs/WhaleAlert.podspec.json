@@ -1,9 +1,9 @@
 {
   "name": "WhaleAlert",
-  "version": "0.1.0",
-  "summary": "A short description of WhaleAlert.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Ryan Cohen/WhaleAlert",
+  "version": "1.0.0",
+  "summary": "Swift implementation of the WhaleAlert API.",
+  "description": "Whale Alert's API allows you to retrieve live and historical transaction data from major blockchains. Currently supported are Bitcoin, Ethereum, Ripple, NEO, EOS, Stellar and Tron. More blockchains will be added in the future. Please read our terms and conditions before using the API.",
+  "homepage": "https://github.com/imryan/WhaleAlert",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,12 @@
     "Ryan Cohen": "notryancohen@gmail.com"
   },
   "source": {
-    "git": "https://github.com/Ryan Cohen/WhaleAlert.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/imryan/WhaleAlert.git",
+    "tag": "1.0.0"
   },
+  "social_media_url": "https://twitter.com/notryancohen",
   "platforms": {
-    "ios": "8.0"
+    "ios": "11.0"
   },
   "source_files": "WhaleAlert/Classes/**/*"
 }

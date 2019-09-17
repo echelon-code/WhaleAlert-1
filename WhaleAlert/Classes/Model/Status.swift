@@ -8,8 +8,8 @@
 import Foundation
 
 public struct Status: Codable {
-    let result: String
-    let blockchains: [Blockchain]
+    public let result: String
+    public let blockchains: [Blockchain]
 }
 
 public struct Blockchain: Codable {

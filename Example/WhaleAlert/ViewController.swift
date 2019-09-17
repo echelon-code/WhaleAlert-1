@@ -28,12 +28,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func getTransaction() {
-        whaleAlert.getTransaction(withHash: "4410c8d14ff9f87ceeed1d65cb58e7c7b2422b2d7529afc675208ce2ce09ed7d",
-                                  fromBlockchain: .bitcoin)
+        whaleAlert.getTransaction(withHash: "4410c8d14ff9f87ceeed1d65cb58e7c7b2422b2d7529afc675208ce2ce09ed7d", fromBlockchain: .bitcoin)
     }
     
     @IBAction private func getAllTransactions() {
-        whaleAlert.getAllTransactions()
+        let pastHour: Date = Date().addingTimeInterval(-3600)
+        whaleAlert.getAllTransactions(fromDate: pastHour)
     }
     
     // MARK: - Private Functions
@@ -66,11 +66,7 @@ extension ViewController: WhaleAlertProtocol {
         debugPrint("whaleAlertDidReceiveStatus: \(String(describing: status)).")
     }
     
-    func whaleAlertDidReceiveTransaction(_ transaction: Transaction?) {
-        debugPrint("whaleAlertDidReceiveTransaction: \(String(describing: transaction)).")
-    }
-    
-    func whaleAlertDidReceiveAllTransactions(_ transactions: [Transaction]?) {
-        debugPrint("whaleAlertDidReceiveAllTransactions: \(String(describing: transactions)).")
+    func whaleAlertDidReceiveTransactions(_ transactions: [Transaction]?) {
+        debugPrint("whaleAlertDidReceiveTransaction(s): \(String(describing: transactions)).")
     }
 }

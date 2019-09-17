@@ -9,6 +9,5 @@ import Foundation
 
 public struct Callbacks {
     public typealias WhaleAlertStatusCallback = (_ status: Status?) -> ()
-    public typealias WhaleAlertTransactionCallback = (_ transaction: Transaction?) -> ()
-    public typealias WhaleAlertAllTransactionsCallback = (_ transactions: [Transaction]?) -> ()
+    public typealias WhaleAlertTransactionsCallback = (_ transaction: [Transaction]?) -> ()
 }
