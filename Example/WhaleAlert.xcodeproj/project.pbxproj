@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		947799C223317FD0008481F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947799C023317FD0008481F5 /* ViewController.swift */; };
+		947799C323317FD0008481F5 /* TransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947799C123317FD0008481F5 /* TransactionsTableViewController.swift */; };
+		947799C6233180DD008481F5 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947799C5233180DD008481F5 /* TransactionTableViewCell.swift */; };
 		BA451FBDC8B9F2B6A51ED2EA /* Pods_WhaleAlert_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F501C3F3051F6C58F4729920 /* Pods_WhaleAlert_Tests.framework */; };
 		EEDB152E51BE3ED8FEBF2816 /* Pods_WhaleAlert_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A79E12A7F19EB06D2AD1E8 /* Pods_WhaleAlert_Example.framework */; };
 /* End PBXBuildFile section */
@@ -36,13 +38,15 @@
 		607FACD01AFB9204008FA782 /* WhaleAlert_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhaleAlert_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* WhaleAlert_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhaleAlert_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		947799C023317FD0008481F5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		947799C123317FD0008481F5 /* TransactionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewController.swift; sourceTree = "<group>"; };
+		947799C5233180DD008481F5 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		DAC2B691B810E6A2B4E5F985 /* Pods-WhaleAlert_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhaleAlert_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WhaleAlert_Tests/Pods-WhaleAlert_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E4E62832741D7AAAFDAA0478 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E8A79E12A7F19EB06D2AD1E8 /* Pods_WhaleAlert_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhaleAlert_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				947799C4233180C8008481F5 /* Cell */,
+				947799BF23317FD0008481F5 /* Controller */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -157,6 +162,23 @@
 				08845034336526DDCF9D6DAD /* Pods-WhaleAlert_Tests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		947799BF23317FD0008481F5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				947799C023317FD0008481F5 /* ViewController.swift */,
+				947799C123317FD0008481F5 /* TransactionsTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		947799C4233180C8008481F5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				947799C5233180DD008481F5 /* TransactionTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,8 +353,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				947799C223317FD0008481F5 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				947799C6233180DD008481F5 /* TransactionTableViewCell.swift in Sources */,
+				947799C323317FD0008481F5 /* TransactionsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,6 +21,9 @@ class ViewController: UIViewController {
         return WhaleAlert(apiKey: "your-api-key", delegate: self)
     }()
     
+    private var transactions: [Transaction] = []
+    private var status: Status?
+    
     // MARK: - IBAction
     
     @IBAction private func getStatus() {
@@ -55,6 +58,13 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: - Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController = segue.destination as! TransactionsTableViewController
+        destinationViewController.transactions = transactions
+    }
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -72,10 +82,26 @@ class ViewController: UIViewController {
 extension ViewController: WhaleAlertProtocol {
     
     func whaleAlertDidReceiveStatus(_ status: Status?) {
+        if let status = status {
+            self.status = status
+        } else {
+            showAlert(title: "Error", message: "No status found.")
+        }
+        
         debugPrint("whaleAlertDidReceiveStatus: \(String(describing: status)).")
     }
     
     func whaleAlertDidReceiveTransactions(_ transactions: [Transaction]?) {
+        if let transactions = transactions {
+            self.transactions = transactions
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.performSegue(withIdentifier: "kSegueToTransactions", sender: nil)
+            }
+        } else {
+            showAlert(title: "Error", message: "No transaction(s) found.")
+        }
+        
         debugPrint("whaleAlertDidReceiveTransaction(s): \(String(describing: transactions)).")
     }
 }

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JY2-lp-a9a">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WhaleAlert-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="WhaleAlert_Example" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,13 +65,97 @@
                             <constraint firstItem="lMQ-Oz-Y3U" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="M79-xY-SIU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="WhaleAlert" id="juR-eF-WUA"/>
                     <connections>
                         <outlet property="buttonStackView" destination="lMQ-Oz-Y3U" id="ES8-AD-gXN"/>
+                        <segue destination="Eeg-pg-v52" kind="show" identifier="kSegueToTransactions" id="Xw9-gC-8vo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8.8000000000000007" y="131.78410794602701"/>
+            <point key="canvasLocation" x="402" y="151"/>
+        </scene>
+        <!--Transactions-->
+        <scene sceneID="E5j-aG-c8c">
+            <objects>
+                <tableViewController id="Eeg-pg-v52" customClass="TransactionsTableViewController" customModule="WhaleAlert_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="rfw-Ap-pRn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionCellId" rowHeight="50" id="22G-R7-J7g" customClass="TransactionTableViewCell" customModule="WhaleAlert_Example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="22G-R7-J7g" id="WdU-dV-gVu">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 BTC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKe-lV-fKu">
+                                            <rect key="frame" x="16" y="14.5" width="45.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$12,000 USD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpf-NS-RUd">
+                                            <rect key="frame" x="66.5" y="14.5" width="102" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" systemColor="placeholderTextColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9/17/2019" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADM-Xi-2QQ">
+                                            <rect key="frame" x="283.5" y="11" width="75.5" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ADM-Xi-2QQ" firstAttribute="centerY" secondItem="gpf-NS-RUd" secondAttribute="centerY" id="1sz-xx-gLj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ADM-Xi-2QQ" secondAttribute="trailing" id="9GW-WY-Ulv"/>
+                                        <constraint firstAttribute="topMargin" secondItem="ADM-Xi-2QQ" secondAttribute="top" id="HjH-wk-UA4"/>
+                                        <constraint firstItem="gpf-NS-RUd" firstAttribute="centerY" secondItem="XKe-lV-fKu" secondAttribute="centerY" id="KSE-LP-nDb"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="XKe-lV-fKu" secondAttribute="leading" id="Ksu-1g-RCK"/>
+                                        <constraint firstItem="gpf-NS-RUd" firstAttribute="leading" secondItem="XKe-lV-fKu" secondAttribute="trailing" constant="5" id="Rx6-FZ-nCm"/>
+                                        <constraint firstItem="ADM-Xi-2QQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gpf-NS-RUd" secondAttribute="trailing" constant="5" id="Rxt-Of-0PN"/>
+                                        <constraint firstItem="XKe-lV-fKu" firstAttribute="centerY" secondItem="WdU-dV-gVu" secondAttribute="centerY" id="fHU-uC-Uwc"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="transactionAmountUSDLabel" destination="gpf-NS-RUd" id="qBb-ft-2rU"/>
+                                    <outlet property="transactionDateLabel" destination="ADM-Xi-2QQ" id="P6M-T1-6B7"/>
+                                    <outlet property="transactionSymbolAndAmountLabel" destination="XKe-lV-fKu" id="PIN-6C-AqT"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Eeg-pg-v52" id="Dqz-3w-dtp"/>
+                            <outlet property="delegate" destination="Eeg-pg-v52" id="qsa-ig-EeP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Transactions" id="wdf-wU-jjm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dcn-SW-v7u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064.8" y="150.67466266866569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BZN-h2-Mew">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JY2-lp-a9a" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RAv-k0-6XU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="OXD-sm-swr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xXC-yB-Yxh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-274.39999999999998" y="150.67466266866569"/>
         </scene>
     </scenes>
 </document>
