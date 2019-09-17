@@ -84,6 +84,12 @@ extension ViewController: WhaleAlertProtocol {
     func whaleAlertDidReceiveStatus(_ status: Status?) {
         if let status = status {
             self.status = status
+            
+            var enabledBlockchains: [String] = []
+            for blockchain in status.blockchains {
+                enabledBlockchains.append(blockchain.name)
+            }
+            showAlert(title: "Success", message: "Enabled blockchains: \(enabledBlockchains.joined(separator: ", ")).")
         } else {
             showAlert(title: "Error", message: "No status found.")
         }
