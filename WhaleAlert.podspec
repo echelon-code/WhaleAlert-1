@@ -12,7 +12,7 @@ Whale Alert's API allows you to retrieve live and historical transaction data fr
   s.author           = { 'Ryan Cohen' => 'notryancohen@gmail.com' }
   s.source           = { :git => 'https://github.com/imryan/WhaleAlert.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/notryancohen'
-
+  s.swift_versions = ['5.0']
   s.ios.deployment_target = '11.0'
   s.source_files = 'WhaleAlert/Classes/**/*'
 end
