@@ -105,7 +105,7 @@ extension ViewController: WhaleAlertProtocol {
                 self?.performSegue(withIdentifier: "kSegueToTransactions", sender: nil)
             }
         } else {
-            showAlert(title: "Error", message: "No transaction(s) found.")
+            showAlert(title: "Error", message: "No transaction(s) found in past hour.")
         }
         
         debugPrint("whaleAlertDidReceiveTransaction(s): \(String(describing: transactions)).")
