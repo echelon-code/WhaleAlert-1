@@ -1,4 +1,4 @@
-# WhaleAlert
+# 🐋 WhaleAlert
 
 [![CI Status](https://img.shields.io/travis/imryan/WhaleAlert.svg?style=flat)](https://travis-ci.org/imryan/WhaleAlert)
 [![Version](https://img.shields.io/cocoapods/v/WhaleAlert.svg?style=flat)](https://cocoapods.org/pods/WhaleAlert)
