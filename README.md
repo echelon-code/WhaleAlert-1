@@ -17,6 +17,64 @@ it, simply add the following line to your Podfile:
 pod 'WhaleAlert'
 ```
 
+## Usage
+
+#### Initialize with WhaleAlert API key
+```swift
+// NOTE: Delegate is optional and can be left nil if you'd rather receive block-based responses
+let whaleAlert: WhaleAlert = WhaleAlert(apiKey: "your-api-key", delegate: self)
+```
+
+#### Get network/blockchain status
+```swift
+// Delegate based
+whaleAlert.getStatus()
+
+// WhaleAlertProtocol
+func whaleAlertDidReceiveStatus(_ status: Status?) {
+    // Do something with `status` object.
+}
+
+// Block based
+whaleAlert.getStatus { (status) in
+    // Do something with `status` object.
+}
+```
+
+#### Get transaction by hash and blockchain
+```swift
+// Delegate based
+whaleAlert.getTransaction(withHash: "some-hash", fromBlockchain: .bitcoin)
+
+// WhaleAlertProtocol
+func whaleAlertDidReceiveTransactions(_ transactions: [Transaction]?) {
+    // Do something with `transactions` object.
+}
+
+// Block based
+whaleAlert.getTransaction(withHash: "some-hash", fromBlockchain: .bitcoin) { (transactions) in
+    // Do something with `transactions` object.
+}
+```
+
+
+#### Get all transactions after start date
+```swift
+// Delegate based
+let pastHour: Date = Date().addingTimeInterval(-3600)
+whaleAlert.getAllTransactions(fromDate: pastHour)
+
+// WhaleAlertProtocol
+func whaleAlertDidReceiveTransactions(_ transactions: [Transaction]?) {
+    // Do something with `transactions` object.
+}
+
+// Block based (`fromDate` is required, all other parameters are optional.)
+whaleAlert.getAllTransactions(fromDate: pastHour, toDate: nil, cursor: nil, minUSDValue: nil, limit: 100, currency: "usd") { (transactions) in
+    // Do something with `transactions` object.          
+}
+```
+
 ## Author
 
 Ryan Cohen, notryancohen@gmail.com
