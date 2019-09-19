@@ -1,5 +1,5 @@
 import XCTest
-import WhaleAlert
+@testable import WhaleAlert
 
 class Tests: XCTestCase {
     

@@ -23,7 +23,7 @@ public class WhaleAlert {
     // MARK: - Attributes
     
     /// Delegate to receive request callbacks.
-    weak var delegate: WhaleAlertProtocol?
+    public weak var delegate: WhaleAlertProtocol?
     
     /// Networking helper.
     private let networking: Networking
