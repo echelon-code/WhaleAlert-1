@@ -47,56 +47,6 @@ class Networking {
         }
     }
     
-    enum NetworkingError: Error {
-        /// API key was not set.
-        case missingAPIKey
-        /// There was no data in the response body from the network.
-        case missingResponse
-        /// Your request was not valid.
-        case badRequest
-        /// No valid API key was provided.
-        case unauthorized
-        /// Access to this resource is restricted for the given caller.
-        case forbidden
-        /// The requested resource does not exist.
-        case notFound
-        /// An unsupported format was requested.
-        case notAcceptable
-        /// You have exceeded the allowed number of calls per minute. Lower call frequency or upgrade your plan for a higher rate limit.
-        case tooManyRequests
-        /// There was a problem with the API host server. Try again later.
-        case serverError
-        /// API is temporarily offline for maintenance. Try again later.
-        case serviceUnavailable
-        /// Other error condition with description.
-        case other(String)
-        
-        /// Initialize networking
-        /// - Parameter statusCode: HTTP status code.
-        init?(statusCode: Int) {
-            switch statusCode {
-            case 400:
-                self = .badRequest
-            case 401:
-                self = .unauthorized
-            case 403:
-                self = .forbidden
-            case 404:
-                self = .notFound
-            case 406:
-                self = .notAcceptable
-            case 429:
-                self = .tooManyRequests
-            case 500:
-                self = .serverError
-            case 503:
-                self = .serviceUnavailable
-            default:
-                return nil
-            }
-        }
-    }
-    
     // MARK: - Initialization
     
     /// Initializes networking helper with personal API key.
@@ -110,8 +60,8 @@ class Networking {
     /// Get the current status of Whale Alert.
     /// - Parameter block: Block returning an optional `Status` object.
     func getStatus(_ block: @escaping Callbacks.WhaleAlertStatusCallback) {
-        request(.status) { (status: Status?, error: Error?) in
-            block(status)
+        request(.status) { (status: Status?, error: WhaleAlertError?) in
+            block(status, error)
         }
     }
     
@@ -123,8 +73,8 @@ class Networking {
                         fromBlockchain blockchain: WhaleAlert.BlockchainType,
                         block: @escaping Callbacks.WhaleAlertTransactionsCallback) {
         
-        request(.transaction(blockchain.rawValue, hash)) { (transactionResponseData: TransactionResponseData?, error: Error?) in
-            block(transactionResponseData?.transactions)
+        request(.transaction(blockchain.rawValue, hash)) { (transactionResponseData: TransactionResponseData?, error: WhaleAlertError?) in
+            block(transactionResponseData?.transactions, error)
         }
     }
     
@@ -147,8 +97,8 @@ class Networking {
             "currency": currency
         ]
         
-        request(.allTransactions, parameters: parameters) { (transactionResponseData: TransactionResponseData?, error: Error?) in
-            block(transactionResponseData?.transactions)
+        request(.allTransactions, parameters: parameters) { (transactionResponseData: TransactionResponseData?, error: WhaleAlertError?) in
+            block(transactionResponseData?.transactions, error)
         }
     }
 }
@@ -157,7 +107,7 @@ class Networking {
 
 extension Networking {
     
-    private func request<T: Decodable>(_ endpoint: Endpoint, parameters: [String: Any?]? = nil, completion: @escaping (_ object: T?, _ error: NetworkingError?) -> ()) {
+    private func request<T: Decodable>(_ endpoint: Endpoint, parameters: [String: Any?]? = nil, completion: @escaping (_ object: T?, _ error: WhaleAlertError?) -> ()) {
         guard let apiKey = apiKey else {
             completion(nil, .missingAPIKey)
             return
@@ -182,7 +132,7 @@ extension Networking {
             }
             
             if let httpResponseStatusCode = (response as? HTTPURLResponse)?.statusCode, httpResponseStatusCode != 200 {
-                completion(nil, NetworkingError(statusCode: httpResponseStatusCode))
+                completion(nil, WhaleAlertError(statusCode: httpResponseStatusCode))
             }
             
             if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {

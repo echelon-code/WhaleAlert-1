@@ -7,20 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A60F72707EEC1ABA41C3E64C24D08DF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5072D5283EC6956E1FD705AA654C5F6 /* Transaction.swift */; };
+		4857477AB06343D88159E5C474532055 /* Callbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638C003A79A1596214A5BA82835383FB /* Callbacks.swift */; };
 		4F7325C74FC58E38F151FC7BD4961FFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		537C28FDE0D9075431CBBFDB9E857EF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		6F46AD5C9CB825B833C46480CC1B5CB0 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518BD1DA4CC299CD9EE19F90AD30A1DE /* Networking.swift */; };
 		815BA0D2A28A7F2BF2725043E9FDD0C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		944D78EB2332A0E300697FED /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944D78E62332A0E300697FED /* Transaction.swift */; };
-		944D78ED2332A0E300697FED /* Callbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944D78E92332A0E300697FED /* Callbacks.swift */; };
-		944D78EE2332A0E300697FED /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944D78EA2332A0E300697FED /* Networking.swift */; };
-		944D78F32332A13400697FED /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944D78F22332A13400697FED /* Status.swift */; };
+		945CB71824BA4102001262AD /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945CB71624BA40D7001262AD /* Errors.swift */; };
 		98050BDD1A7190CB78D37B12258EC7E7 /* Pods-WhaleAlert_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D21B52A613DED1EE00C2E397EEA94982 /* Pods-WhaleAlert_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A65C53401332B6E0260B7735C506575B /* Pods-WhaleAlert_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F64129384771D7ED55D224D47EDC47F4 /* Pods-WhaleAlert_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A74BF91245F6477E5B4BD70E24D93F20 /* WhaleAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4193CDBA6146D19B248058CFCB40FBC5 /* WhaleAlert-dummy.m */; };
-		A8143069A60B51B11D5A723C425BEDFC /* WhaleAlert-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9164F85C9C96C379F1BBFA599D59C335 /* WhaleAlert-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A74BF91245F6477E5B4BD70E24D93F20 /* WhaleAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E41EB2A082F86D612D3A93740AE61D48 /* WhaleAlert-dummy.m */; };
+		A8143069A60B51B11D5A723C425BEDFC /* WhaleAlert-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C70D2E0F432AFF5AC78D0B879FCF006 /* WhaleAlert-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADC2F7F83CBC8D88A8ED03162C836415 /* Pods-WhaleAlert_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F0E9BF04292AC3984C17B62932448E /* Pods-WhaleAlert_Tests-dummy.m */; };
+		BF4D58DBD57681C82146DB1229A838C4 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D72CCF5B7EE85F3CADF7572833FCC2 /* Status.swift */; };
 		C48BFE4E52FC5A62CEA7C568884ECD83 /* Pods-WhaleAlert_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D04B19CB3F57E25725FB1BBDBED60DAD /* Pods-WhaleAlert_Example-dummy.m */; };
-		C491863D3376486C9E803B17EAAC7C30 /* WhaleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87162EB0CF24721C7035ED99646E3C3A /* WhaleAlert.swift */; };
+		C491863D3376486C9E803B17EAAC7C30 /* WhaleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559357BF032D5145C316BF980E6786EC /* WhaleAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,42 +42,44 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08663CDED0B8C84658FD5EA6A9B875C1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1732A0BF23EF2660AE2EF320933190A3 /* WhaleAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WhaleAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D35F6D3E1360AC4CE5F3EA28259A5C /* Pods-WhaleAlert_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WhaleAlert_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		2870DF8FE13BEC96BEA29764A0F883AC /* WhaleAlert-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WhaleAlert-prefix.pch"; sourceTree = "<group>"; };
+		1F0B85C5F226D5343FD98C83169328AC /* WhaleAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WhaleAlert.release.xcconfig; sourceTree = "<group>"; };
+		21D72CCF5B7EE85F3CADF7572833FCC2 /* Status.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		2DC5D61286C905E7AF922A63E07B108C /* Pods-WhaleAlert_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WhaleAlert_Example-Info.plist"; sourceTree = "<group>"; };
-		2E66D7ED4E6E26BECF28103FD686D003 /* WhaleAlert.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WhaleAlert.xcconfig; sourceTree = "<group>"; };
+		2E730909FFF068633BC4D66A810EB71F /* WhaleAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WhaleAlert.debug.xcconfig; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4193CDBA6146D19B248058CFCB40FBC5 /* WhaleAlert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WhaleAlert-dummy.m"; sourceTree = "<group>"; };
 		41F31B67D7C24659685D26A55A67C179 /* Pods-WhaleAlert_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WhaleAlert_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4B1123706CC775DBD273F8308E8F3DAE /* Pods-WhaleAlert_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WhaleAlert_Example-frameworks.sh"; sourceTree = "<group>"; };
+		4C70D2E0F432AFF5AC78D0B879FCF006 /* WhaleAlert-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WhaleAlert-umbrella.h"; sourceTree = "<group>"; };
+		518BD1DA4CC299CD9EE19F90AD30A1DE /* Networking.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		559357BF032D5145C316BF980E6786EC /* WhaleAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhaleAlert.swift; path = WhaleAlert/Classes/WhaleAlert.swift; sourceTree = "<group>"; };
+		638C003A79A1596214A5BA82835383FB /* Callbacks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Callbacks.swift; sourceTree = "<group>"; };
+		64C7E81A6BEB7204F100B06191FC74D3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6C9CAD5A88202D624710C3DD861DEBB7 /* WhaleAlert.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WhaleAlert.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		711B29F544F6FBABE435F6516319DFAE /* Pods-WhaleAlert_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WhaleAlert_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		7C98CBD6AB3A4406EA570D52E52A0418 /* WhaleAlert.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WhaleAlert.modulemap; sourceTree = "<group>"; };
+		77C4563154238A708AD20A145929AB35 /* WhaleAlert.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WhaleAlert.modulemap; sourceTree = "<group>"; };
+		836039912570AA53872D8DE68E5B01AC /* WhaleAlert-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WhaleAlert-Info.plist"; sourceTree = "<group>"; };
 		83F0E9BF04292AC3984C17B62932448E /* Pods-WhaleAlert_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WhaleAlert_Tests-dummy.m"; sourceTree = "<group>"; };
 		85703C2E151F1CEA8EAE8EC9AB5375A5 /* Pods-WhaleAlert_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WhaleAlert_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8594E45856848B2400699BE37D5A1A59 /* Pods_WhaleAlert_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhaleAlert_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8614B0CCE2A9CBD0435D85019B8298DB /* Pods-WhaleAlert_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WhaleAlert_Tests.modulemap"; sourceTree = "<group>"; };
-		87162EB0CF24721C7035ED99646E3C3A /* WhaleAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhaleAlert.swift; path = WhaleAlert/Classes/WhaleAlert.swift; sourceTree = "<group>"; };
-		9164F85C9C96C379F1BBFA599D59C335 /* WhaleAlert-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WhaleAlert-umbrella.h"; sourceTree = "<group>"; };
-		92245CB27C82B666BD2082D780529874 /* WhaleAlert-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WhaleAlert-Info.plist"; sourceTree = "<group>"; };
-		944D78E62332A0E300697FED /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		944D78E92332A0E300697FED /* Callbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Callbacks.swift; sourceTree = "<group>"; };
-		944D78EA2332A0E300697FED /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		944D78F22332A13400697FED /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		945CB71624BA40D7001262AD /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1B2C37A1482C0A84C3AC40FAC212C1D /* Pods-WhaleAlert_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WhaleAlert_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B141B4F212BB7F6BFE209E93242DCC35 /* Pods_WhaleAlert_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhaleAlert_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC0FDBA6C9407108CE3349CEC72D3B14 /* WhaleAlert.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WhaleAlert.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C266F95A9BB5EFE2F0BE2089BA010AA7 /* Pods-WhaleAlert_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WhaleAlert_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C36E5CE2399D48F012B96C1F7D0D9974 /* Pods-WhaleAlert_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WhaleAlert_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		CC7E8E61FFDC60878CF766C8057BD6BF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CD6AE30513B27E58A2E705D041678A51 /* Pods-WhaleAlert_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WhaleAlert_Tests-Info.plist"; sourceTree = "<group>"; };
 		D04B19CB3F57E25725FB1BBDBED60DAD /* Pods-WhaleAlert_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WhaleAlert_Example-dummy.m"; sourceTree = "<group>"; };
 		D21B52A613DED1EE00C2E397EEA94982 /* Pods-WhaleAlert_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WhaleAlert_Tests-umbrella.h"; sourceTree = "<group>"; };
+		D5072D5283EC6956E1FD705AA654C5F6 /* Transaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		DF0A91F1278464FA594E0372E03BEE6E /* WhaleAlert-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WhaleAlert-prefix.pch"; sourceTree = "<group>"; };
+		E41EB2A082F86D612D3A93740AE61D48 /* WhaleAlert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WhaleAlert-dummy.m"; sourceTree = "<group>"; };
 		E7736B40BCC6E75029A2F9E795B76A0C /* Pods-WhaleAlert_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WhaleAlert_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F336A6138FF9E76E2A09EDA239EC438D /* Pods-WhaleAlert_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WhaleAlert_Example.modulemap"; sourceTree = "<group>"; };
 		F64129384771D7ED55D224D47EDC47F4 /* Pods-WhaleAlert_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WhaleAlert_Example-umbrella.h"; sourceTree = "<group>"; };
-		FBF84664F1384CA8A11D9948452B6470 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,47 +136,42 @@
 			path = "Target Support Files/Pods-WhaleAlert_Example";
 			sourceTree = "<group>";
 		};
-		4D58C641713B7997D6CF48E830638ADF /* WhaleAlert */ = {
+		0D2DAC2A9C1EAF751894C2A489B3DE7A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				87162EB0CF24721C7035ED99646E3C3A /* WhaleAlert.swift */,
-				944D78E52332A0E300697FED /* Model */,
-				944D78E82332A0E300697FED /* Networking */,
-				BD101CD72821F7193F975FA022D91058 /* Pod */,
-				D1760D7ACBA38691BE5C990659035E8E /* Support Files */,
+				77C4563154238A708AD20A145929AB35 /* WhaleAlert.modulemap */,
+				E41EB2A082F86D612D3A93740AE61D48 /* WhaleAlert-dummy.m */,
+				836039912570AA53872D8DE68E5B01AC /* WhaleAlert-Info.plist */,
+				DF0A91F1278464FA594E0372E03BEE6E /* WhaleAlert-prefix.pch */,
+				4C70D2E0F432AFF5AC78D0B879FCF006 /* WhaleAlert-umbrella.h */,
+				2E730909FFF068633BC4D66A810EB71F /* WhaleAlert.debug.xcconfig */,
+				1F0B85C5F226D5343FD98C83169328AC /* WhaleAlert.release.xcconfig */,
 			);
-			name = WhaleAlert;
-			path = ../..;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/WhaleAlert";
 			sourceTree = "<group>";
 		};
-		944D78E52332A0E300697FED /* Model */ = {
+		2CBFF836FDC34563D8C7BD3F763ED558 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				944D78F22332A13400697FED /* Status.swift */,
-				944D78E62332A0E300697FED /* Transaction.swift */,
+				21D72CCF5B7EE85F3CADF7572833FCC2 /* Status.swift */,
+				D5072D5283EC6956E1FD705AA654C5F6 /* Transaction.swift */,
 			);
 			name = Model;
 			path = WhaleAlert/Classes/Model;
 			sourceTree = "<group>";
 		};
-		944D78E82332A0E300697FED /* Networking */ = {
+		313F4953E18E88276F68F12DA3D258DA /* WhaleAlert */ = {
 			isa = PBXGroup;
 			children = (
-				944D78E92332A0E300697FED /* Callbacks.swift */,
-				944D78EA2332A0E300697FED /* Networking.swift */,
+				559357BF032D5145C316BF980E6786EC /* WhaleAlert.swift */,
+				2CBFF836FDC34563D8C7BD3F763ED558 /* Model */,
+				EC71D24F0F857A2BAAE2A229D3D18254 /* Networking */,
+				E2C418ACBA6F68FC6AD11D8BADA41695 /* Pod */,
+				0D2DAC2A9C1EAF751894C2A489B3DE7A /* Support Files */,
 			);
-			name = Networking;
-			path = WhaleAlert/Classes/Networking;
-			sourceTree = "<group>";
-		};
-		BD101CD72821F7193F975FA022D91058 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				08663CDED0B8C84658FD5EA6A9B875C1 /* LICENSE */,
-				FBF84664F1384CA8A11D9948452B6470 /* README.md */,
-				BC0FDBA6C9407108CE3349CEC72D3B14 /* WhaleAlert.podspec */,
-			);
-			name = Pod;
+			name = WhaleAlert;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -211,26 +209,33 @@
 			);
 			sourceTree = "<group>";
 		};
-		D1760D7ACBA38691BE5C990659035E8E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				7C98CBD6AB3A4406EA570D52E52A0418 /* WhaleAlert.modulemap */,
-				2E66D7ED4E6E26BECF28103FD686D003 /* WhaleAlert.xcconfig */,
-				4193CDBA6146D19B248058CFCB40FBC5 /* WhaleAlert-dummy.m */,
-				92245CB27C82B666BD2082D780529874 /* WhaleAlert-Info.plist */,
-				2870DF8FE13BEC96BEA29764A0F883AC /* WhaleAlert-prefix.pch */,
-				9164F85C9C96C379F1BBFA599D59C335 /* WhaleAlert-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/WhaleAlert";
-			sourceTree = "<group>";
-		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2C418ACBA6F68FC6AD11D8BADA41695 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				CC7E8E61FFDC60878CF766C8057BD6BF /* LICENSE */,
+				64C7E81A6BEB7204F100B06191FC74D3 /* README.md */,
+				6C9CAD5A88202D624710C3DD861DEBB7 /* WhaleAlert.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		EC71D24F0F857A2BAAE2A229D3D18254 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				638C003A79A1596214A5BA82835383FB /* Callbacks.swift */,
+				945CB71624BA40D7001262AD /* Errors.swift */,
+				518BD1DA4CC299CD9EE19F90AD30A1DE /* Networking.swift */,
+			);
+			name = Networking;
+			path = WhaleAlert/Classes/Networking;
 			sourceTree = "<group>";
 		};
 		F391EE5078EC1E3C78655531A2EF37A9 /* Products */ = {
@@ -246,7 +251,7 @@
 		FC9EAC20CA08BADEB637803E10A85826 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4D58C641713B7997D6CF48E830638ADF /* WhaleAlert */,
+				313F4953E18E88276F68F12DA3D258DA /* WhaleAlert */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -345,6 +350,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					A10757D28B6A8E54EEE52EF930EF782A = {
+						LastSwiftMigration = 1150;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -352,6 +362,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = F391EE5078EC1E3C78655531A2EF37A9 /* Products */;
@@ -402,12 +413,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4857477AB06343D88159E5C474532055 /* Callbacks.swift in Sources */,
+				6F46AD5C9CB825B833C46480CC1B5CB0 /* Networking.swift in Sources */,
+				BF4D58DBD57681C82146DB1229A838C4 /* Status.swift in Sources */,
+				1A60F72707EEC1ABA41C3E64C24D08DF /* Transaction.swift in Sources */,
 				A74BF91245F6477E5B4BD70E24D93F20 /* WhaleAlert-dummy.m in Sources */,
-				944D78ED2332A0E300697FED /* Callbacks.swift in Sources */,
 				C491863D3376486C9E803B17EAAC7C30 /* WhaleAlert.swift in Sources */,
-				944D78EE2332A0E300697FED /* Networking.swift in Sources */,
-				944D78EB2332A0E300697FED /* Transaction.swift in Sources */,
-				944D78F32332A13400697FED /* Status.swift in Sources */,
+				945CB71824BA4102001262AD /* Errors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,39 +449,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		24EE5BE95949A51BFC1C1826B62718D4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E66D7ED4E6E26BECF28103FD686D003 /* WhaleAlert.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/WhaleAlert/WhaleAlert-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/WhaleAlert/WhaleAlert-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/WhaleAlert/WhaleAlert.modulemap";
-				PRODUCT_MODULE_NAME = WhaleAlert;
-				PRODUCT_NAME = WhaleAlert;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		257497152829C177993B5EC99C1D227A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -529,12 +508,46 @@
 			};
 			name = Release;
 		};
+		2DC36C61A8EE8DEA3C8C64A126AE0C53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E730909FFF068633BC4D66A810EB71F /* WhaleAlert.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WhaleAlert/WhaleAlert-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WhaleAlert/WhaleAlert-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/WhaleAlert/WhaleAlert.modulemap";
+				PRODUCT_MODULE_NAME = WhaleAlert;
+				PRODUCT_NAME = WhaleAlert;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		4C175C76E9E9E56A74A2E40773C61428 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A1B2C37A1482C0A84C3AC40FAC212C1D /* Pods-WhaleAlert_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -558,6 +571,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -571,6 +585,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -594,6 +609,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -671,9 +688,9 @@
 			};
 			name = Debug;
 		};
-		B2866E120D4C411B21677BCFE923E574 /* Release */ = {
+		ADDDE478BD10C0D9FD853F5B0461DBE6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E66D7ED4E6E26BECF28103FD686D003 /* WhaleAlert.xcconfig */;
+			baseConfigurationReference = 1F0B85C5F226D5343FD98C83169328AC /* WhaleAlert.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -802,8 +819,8 @@
 		DBA89D8A629DC83E7D17CD192DA22D8E /* Build configuration list for PBXNativeTarget "WhaleAlert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				24EE5BE95949A51BFC1C1826B62718D4 /* Debug */,
-				B2866E120D4C411B21677BCFE923E574 /* Release */,
+				2DC36C61A8EE8DEA3C8C64A126AE0C53 /* Debug */,
+				ADDDE478BD10C0D9FD853F5B0461DBE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

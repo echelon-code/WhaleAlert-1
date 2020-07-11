@@ -81,31 +81,41 @@ class ViewController: UIViewController {
 
 extension ViewController: WhaleAlertProtocol {
     
-    func whaleAlertDidReceiveStatus(_ status: Status?) {
-        if let status = status {
-            self.status = status
-            
-            var enabledBlockchains: [String] = []
-            for blockchain in status.blockchains {
-                enabledBlockchains.append(blockchain.name)
-            }
-            showAlert(title: "Success", message: "Enabled blockchains: \(enabledBlockchains.joined(separator: ", ")).")
-        } else {
-            showAlert(title: "Error", message: "No status found.")
+    func whaleAlertDidReceiveStatus(_ status: Status?, _ error: WhaleAlertError?) {
+        if let error = error {
+            showAlert(title: "Error", message: error.description)
+            return
         }
+        
+        guard let status = status else {
+            showAlert(title: "Error", message: "No status found.")
+            return
+        }
+        self.status = status
+        
+        var enabledBlockchains: [String] = []
+        for blockchain in status.blockchains {
+            enabledBlockchains.append(blockchain.name)
+        }
+        showAlert(title: "Success", message: "Enabled blockchains: \(enabledBlockchains.joined(separator: ", ")).")
         
         debugPrint("whaleAlertDidReceiveStatus: \(String(describing: status)).")
     }
     
-    func whaleAlertDidReceiveTransactions(_ transactions: [Transaction]?) {
-        if let transactions = transactions {
-            self.transactions = transactions
-            
-            DispatchQueue.main.async { [weak self] in
-                self?.performSegue(withIdentifier: "kSegueToTransactions", sender: nil)
-            }
-        } else {
+    func whaleAlertDidReceiveTransactions(_ transactions: [Transaction]?, _ error: WhaleAlertError?) {
+        if let error = error {
+            showAlert(title: "Error", message: error.description)
+            return
+        }
+        
+        guard let transactions = transactions else {
             showAlert(title: "Error", message: "No transaction(s) found in past hour.")
+            return
+        }
+        self.transactions = transactions
+        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "kSegueToTransactions", sender: nil)
         }
         
         debugPrint("whaleAlertDidReceiveTransaction(s): \(String(describing: transactions)).")

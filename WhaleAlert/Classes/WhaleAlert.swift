@@ -11,11 +11,11 @@ public protocol WhaleAlertProtocol: AnyObject {
     
     /// Client did receive response with optional `Status` object.
     /// - Parameter status: Optional `Status` object.
-    func whaleAlertDidReceiveStatus(_ status: Status?)
+    func whaleAlertDidReceiveStatus(_ status: Status?, _ error: WhaleAlertError?)
     
     /// Client did receive response with optional array of `Transaction` objects.
     /// - Parameter transaction: Optional array of `Transaction` objects.
-    func whaleAlertDidReceiveTransactions(_ transactions: [Transaction]?)
+    func whaleAlertDidReceiveTransactions(_ transactions: [Transaction]?, _ error: WhaleAlertError?)
 }
 
 public class WhaleAlert {
@@ -53,9 +53,9 @@ public class WhaleAlert {
     ///
     /// - Parameter block: Block returning an optional `Status` object.
     public func getStatus(_ block: (Callbacks.WhaleAlertStatusCallback)? = nil) {
-        networking.getStatus { status in
-            block?(status)
-            self.delegate?.whaleAlertDidReceiveStatus(status)
+        networking.getStatus { status, error  in
+            block?(status, error)
+            self.delegate?.whaleAlertDidReceiveStatus(status, error)
         }
     }
     
@@ -69,9 +69,9 @@ public class WhaleAlert {
     ///   - block: Block returning an optional `Transaction` object.
     public func getTransaction(withHash hash: String, fromBlockchain blockchain: BlockchainType,
                                block: (Callbacks.WhaleAlertTransactionsCallback)? = nil) {
-        networking.getTransaction(withHash: hash, fromBlockchain: blockchain) { transaction in
-            block?(transaction)
-            self.delegate?.whaleAlertDidReceiveTransactions(transaction)
+        networking.getTransaction(withHash: hash, fromBlockchain: blockchain) { transaction, error in
+            block?(transaction, error)
+            self.delegate?.whaleAlertDidReceiveTransactions(transaction, error)
         }
     }
     
@@ -96,9 +96,9 @@ public class WhaleAlert {
                                    currency: String? = nil,
                                    block: (Callbacks.WhaleAlertTransactionsCallback)? = nil) {
         
-        networking.getAllTransactions(fromDate: fromDate, toDate: toDate, cursor: cursor, minUSDValue: minUSDValue, limit: limit, currency: currency) { transactions in
-            block?(transactions)
-            self.delegate?.whaleAlertDidReceiveTransactions(transactions)
+        networking.getAllTransactions(fromDate: fromDate, toDate: toDate, cursor: cursor, minUSDValue: minUSDValue, limit: limit, currency: currency) { transactions, error in
+            block?(transactions, error)
+            self.delegate?.whaleAlertDidReceiveTransactions(transactions, error)
         }
     }
 }

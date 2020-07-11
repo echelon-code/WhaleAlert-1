@@ -42,7 +42,7 @@ class Tests: XCTestCase {
         //        }
         //    ]
         //}
-        whaleAlert.getStatus { (status) in
+        whaleAlert.getStatus { (status, error) in
             guard let status = status else {
                 XCTFail("Status object was nil.")
                 return
@@ -85,7 +85,7 @@ class Tests: XCTestCase {
         //  ]
         //}
         let billionDollarHash: String = "4410c8d14ff9f87ceeed1d65cb58e7c7b2422b2d7529afc675208ce2ce09ed7d"
-        whaleAlert.getTransaction(withHash: billionDollarHash, fromBlockchain: .bitcoin) { (transactions) in
+        whaleAlert.getTransaction(withHash: billionDollarHash, fromBlockchain: .bitcoin) { (transactions, error) in
             guard let transactions = transactions, let firstTransaction = transactions.first else {
                 XCTFail("Transaction(s) were nil.")
                 return
@@ -131,7 +131,7 @@ class Tests: XCTestCase {
         //}
         let now: Date = Date()
         let pastHour: Date = now.addingTimeInterval(-3600)
-        whaleAlert.getAllTransactions(fromDate: pastHour, toDate: now) { (transactions) in
+        whaleAlert.getAllTransactions(fromDate: pastHour, toDate: now) { (transactions, error) in
             guard let transactions = transactions, let firstTransaction = transactions.first else {
                 XCTFail("Transaction(s) were nil.")
                 return
