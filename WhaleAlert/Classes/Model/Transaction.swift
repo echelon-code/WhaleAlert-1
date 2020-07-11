@@ -49,14 +49,14 @@ public struct Transaction: Codable {
         fromWallet = try container.decode(Wallet.self, forKey: .fromWallet)
         toWallet = try container.decode(Wallet.self, forKey: .toWallet)
         
-        // Amount value somtimes returns as integer
+        // Amount value sometimes returns as integer
         if let value = try? container.decode(Int.self, forKey: .amount) {
             amount = Double(value)
         } else {
             amount = try container.decode(Double.self, forKey: .amount)
         }
         
-        // Amount USD value somtimes returns as integer
+        // Amount USD value sometimes returns as integer
         if let value = try? container.decode(Int.self, forKey: .amountUsd) {
             amountUsd = Double(value)
         } else {
