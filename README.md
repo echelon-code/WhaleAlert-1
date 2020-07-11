@@ -31,12 +31,12 @@ let whaleAlert: WhaleAlert = WhaleAlert(apiKey: "your-api-key", delegate: self)
 whaleAlert.getStatus()
 
 // WhaleAlertProtocol
-func whaleAlertDidReceiveStatus(_ status: Status?) {
+func whaleAlertDidReceiveStatus(_ status: Status?, _ error: WhaleAlertError?) {
     // Do something with `status` object.
 }
 
 // Block based
-whaleAlert.getStatus { (status) in
+whaleAlert.getStatus { (status, error) in
     // Do something with `status` object.
 }
 ```
@@ -47,16 +47,15 @@ whaleAlert.getStatus { (status) in
 whaleAlert.getTransaction(withHash: "some-hash", fromBlockchain: .bitcoin)
 
 // WhaleAlertProtocol
-func whaleAlertDidReceiveTransactions(_ transactions: [Transaction]?) {
+func whaleAlertDidReceiveTransactions(_ transactions: [Transaction]?, _ error: WhaleAlertError?) {
     // Do something with `transactions` object.
 }
 
 // Block based
-whaleAlert.getTransaction(withHash: "some-hash", fromBlockchain: .bitcoin) { (transactions) in
+whaleAlert.getTransaction(withHash: "some-hash", fromBlockchain: .bitcoin) { (transactions, error) in
     // Do something with `transactions` object.
 }
 ```
-
 
 #### Get all transactions after start date
 ```swift
@@ -65,12 +64,12 @@ let pastHour: Date = Date().addingTimeInterval(-3600)
 whaleAlert.getAllTransactions(fromDate: pastHour)
 
 // WhaleAlertProtocol
-func whaleAlertDidReceiveTransactions(_ transactions: [Transaction]?) {
+func whaleAlertDidReceiveTransactions(_ transactions: [Transaction]?, _ error: WhaleAlertError?) {
     // Do something with `transactions` object.
 }
 
 // Block based (`fromDate` is required, all other parameters are optional.)
-whaleAlert.getAllTransactions(fromDate: pastHour, toDate: nil, cursor: nil, minUSDValue: nil, limit: 100, currency: "usd") { (transactions) in
+whaleAlert.getAllTransactions(fromDate: pastHour, toDate: nil, cursor: nil, minUSDValue: nil, limit: 100, currency: "usd") { (transactions, error) in
     // Do something with `transactions` object.          
 }
 ```

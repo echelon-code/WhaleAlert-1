@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WhaleAlert'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'Swift implementation of the WhaleAlert API.'
   
   s.description      = <<-DESC
