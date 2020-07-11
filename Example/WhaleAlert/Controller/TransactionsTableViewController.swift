@@ -50,6 +50,7 @@ class TransactionsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        tappedSortBarButtonItem()
     }
     
     // MARK: - UITableViewDataSource
