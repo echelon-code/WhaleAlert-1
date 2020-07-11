@@ -15,24 +15,51 @@ class TransactionsTableViewController: UITableViewController {
     
     var transactions: [Transaction] = []
     
+    private var sortAscending: Bool = true
+    
+    // MARK: - UI Functions -
+    
+    private func setupUI() {
+        let sortBarButtonItem: UIBarButtonItem = .init(title: "Sort", style: .plain, target: self, action: #selector(tappedSortBarButtonItem))
+        navigationItem.rightBarButtonItem = sortBarButtonItem
+    }
+    
+    private func reloadTableViewData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadSections([0], with: .automatic)
+        }
+    }
+    
+    // MARK: - Functions -
+    
+    private func sortByPrice(ascending: Bool) {
+        ascending ? transactions.sort { $0.amountUsd < $1.amountUsd } : transactions.sort { $0.amountUsd > $1.amountUsd }
+        reloadTableViewData()
+    }
+    
+    // MARK: - Actions -
+    
+    @objc
+    private func tappedSortBarButtonItem() {
+        sortByPrice(ascending: sortAscending)
+        sortAscending = !sortAscending
+    }
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
     }
     
     // MARK: - UITableViewDataSource
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return transactions.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Transactions"
+        return "Transaction\(transactions.count > 1 ? "s" : "")"
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,8 +73,12 @@ class TransactionsTableViewController: UITableViewController {
     
     // MARK: - UITableViewDelegate
     
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 66.0
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50.0
+        return UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

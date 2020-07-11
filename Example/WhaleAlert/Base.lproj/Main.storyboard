@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JY2-lp-a9a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JY2-lp-a9a">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -84,41 +84,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionCellId" rowHeight="50" id="22G-R7-J7g" customClass="TransactionTableViewCell" customModule="WhaleAlert_Example" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="50"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionCellId" rowHeight="66" id="22G-R7-J7g" customClass="TransactionTableViewCell" customModule="WhaleAlert_Example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="22G-R7-J7g" id="WdU-dV-gVu">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9/17/2019" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADM-Xi-2QQ">
+                                            <rect key="frame" x="16" y="11" width="343" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 BTC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKe-lV-fKu">
-                                            <rect key="frame" x="16" y="14.5" width="45.5" height="21"/>
+                                            <rect key="frame" x="16" y="34" width="45.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$12,000 USD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpf-NS-RUd">
-                                            <rect key="frame" x="66.5" y="14.5" width="102" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$12,000 USD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpf-NS-RUd">
+                                            <rect key="frame" x="257" y="34" width="102" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" systemColor="placeholderTextColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9/17/2019" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADM-Xi-2QQ">
-                                            <rect key="frame" x="283.5" y="11" width="75.5" height="28"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ADM-Xi-2QQ" firstAttribute="centerY" secondItem="gpf-NS-RUd" secondAttribute="centerY" id="1sz-xx-gLj"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ADM-Xi-2QQ" secondAttribute="trailing" id="9GW-WY-Ulv"/>
-                                        <constraint firstAttribute="topMargin" secondItem="ADM-Xi-2QQ" secondAttribute="top" id="HjH-wk-UA4"/>
-                                        <constraint firstItem="gpf-NS-RUd" firstAttribute="centerY" secondItem="XKe-lV-fKu" secondAttribute="centerY" id="KSE-LP-nDb"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="XKe-lV-fKu" secondAttribute="leading" id="Ksu-1g-RCK"/>
-                                        <constraint firstItem="gpf-NS-RUd" firstAttribute="leading" secondItem="XKe-lV-fKu" secondAttribute="trailing" constant="5" id="Rx6-FZ-nCm"/>
-                                        <constraint firstItem="ADM-Xi-2QQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gpf-NS-RUd" secondAttribute="trailing" constant="5" id="Rxt-Of-0PN"/>
-                                        <constraint firstItem="XKe-lV-fKu" firstAttribute="centerY" secondItem="WdU-dV-gVu" secondAttribute="centerY" id="fHU-uC-Uwc"/>
+                                        <constraint firstAttribute="trailing" secondItem="gpf-NS-RUd" secondAttribute="trailing" constant="16" id="0BE-bY-xqW"/>
+                                        <constraint firstItem="ADM-Xi-2QQ" firstAttribute="leading" secondItem="WdU-dV-gVu" secondAttribute="leadingMargin" id="Kxi-tS-5bL"/>
+                                        <constraint firstItem="gpf-NS-RUd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XKe-lV-fKu" secondAttribute="trailing" constant="5" id="Qmv-35-SXm"/>
+                                        <constraint firstItem="XKe-lV-fKu" firstAttribute="bottom" secondItem="WdU-dV-gVu" secondAttribute="bottomMargin" id="UfC-bc-2c7"/>
+                                        <constraint firstItem="XKe-lV-fKu" firstAttribute="top" secondItem="ADM-Xi-2QQ" secondAttribute="bottom" constant="6" id="ZQK-ZP-Rn4"/>
+                                        <constraint firstItem="ADM-Xi-2QQ" firstAttribute="top" secondItem="WdU-dV-gVu" secondAttribute="topMargin" id="eZB-ha-9L0"/>
+                                        <constraint firstItem="ADM-Xi-2QQ" firstAttribute="trailing" secondItem="WdU-dV-gVu" secondAttribute="trailingMargin" id="gXN-ij-8jN"/>
+                                        <constraint firstItem="XKe-lV-fKu" firstAttribute="leading" secondItem="WdU-dV-gVu" secondAttribute="leadingMargin" id="vpk-rj-g2S"/>
+                                        <constraint firstItem="gpf-NS-RUd" firstAttribute="centerY" secondItem="XKe-lV-fKu" secondAttribute="centerY" id="w6i-dQ-kUG"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
