@@ -20,8 +20,10 @@ class TransactionsTableViewController: UITableViewController {
     // MARK: - UI Functions -
     
     private func setupUI() {
-        let sortBarButtonItem: UIBarButtonItem = .init(title: "Sort", style: .plain, target: self, action: #selector(tappedSortBarButtonItem))
-        navigationItem.rightBarButtonItem = sortBarButtonItem
+        if transactions.count > 1 {
+            let sortBarButtonItem: UIBarButtonItem = .init(title: "Sort", style: .plain, target: self, action: #selector(tappedSortBarButtonItem))
+            navigationItem.rightBarButtonItem = sortBarButtonItem
+        }
     }
     
     private func reloadTableViewData() {
@@ -50,7 +52,10 @@ class TransactionsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        tappedSortBarButtonItem()
+        
+        if transactions.count > 1 {
+            tappedSortBarButtonItem()
+        }
     }
     
     // MARK: - UITableViewDataSource
