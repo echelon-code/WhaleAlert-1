@@ -48,9 +48,53 @@ class Networking {
     }
     
     enum NetworkingError: Error {
+        /// API key was not set.
         case missingAPIKey
+        /// There was no data in the response body from the network.
         case missingResponse
+        /// Your request was not valid.
+        case badRequest
+        /// No valid API key was provided.
+        case unauthorized
+        /// Access to this resource is restricted for the given caller.
+        case forbidden
+        /// The requested resource does not exist.
+        case notFound
+        /// An unsupported format was requested.
+        case notAcceptable
+        /// You have exceeded the allowed number of calls per minute. Lower call frequency or upgrade your plan for a higher rate limit.
+        case tooManyRequests
+        /// There was a problem with the API host server. Try again later.
+        case serverError
+        /// API is temporarily offline for maintenance. Try again later.
+        case serviceUnavailable
+        /// Other error condition with description.
         case other(String)
+        
+        /// Initialize networking
+        /// - Parameter statusCode: HTTP status code.
+        init?(statusCode: Int) {
+            switch statusCode {
+            case 400:
+                self = .badRequest
+            case 401:
+                self = .unauthorized
+            case 403:
+                self = .forbidden
+            case 404:
+                self = .notFound
+            case 406:
+                self = .notAcceptable
+            case 429:
+                self = .tooManyRequests
+            case 500:
+                self = .serverError
+            case 503:
+                self = .serviceUnavailable
+            default:
+                return nil
+            }
+        }
     }
     
     // MARK: - Initialization
@@ -135,6 +179,10 @@ extension Networking {
             guard let data = data else {
                 completion(nil, .missingResponse)
                 return
+            }
+            
+            if let httpResponseStatusCode = (response as? HTTPURLResponse)?.statusCode, httpResponseStatusCode != 200 {
+                completion(nil, NetworkingError(statusCode: httpResponseStatusCode))
             }
             
             if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
