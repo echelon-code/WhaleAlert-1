@@ -36,13 +36,13 @@ class Networking {
         var description: String {
             switch self {
             case .base:
-                return Endpoint.baseURL
+                return Self.baseURL
             case .status:
-                return "\(Endpoint.baseURL)/status"
+                return "\(Self.baseURL)/status"
             case .transaction(let blockchain, let hash):
-                return "\(Endpoint.baseURL)/transaction/\(blockchain)/\(hash)"
+                return "\(Self.baseURL)/transaction/\(blockchain)/\(hash)"
             case .allTransactions:
-                return "\(Endpoint.baseURL)/transactions"
+                return "\(Self.baseURL)/transactions"
             }
         }
     }
