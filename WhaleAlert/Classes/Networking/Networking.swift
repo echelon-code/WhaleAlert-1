@@ -113,32 +113,35 @@ extension Networking {
             return
         }
         
-        let urlString: String = "\(endpoint.description)?api_key=\(apiKey)"
-        var urlComponents: URLComponents = URLComponents(string: urlString)!
+        var urlComponents: URLComponents = URLComponents(string: endpoint.description)!
+        var queryItems: [URLQueryItem] = [
+            URLQueryItem(name: "api_key", value: apiKey)
+        ]
         
         if let parameters = parameters {
             let cleanedParameters = parameters.compactMapValues({ $0 })
             
             for parameter in cleanedParameters {
                 let queryItem: URLQueryItem = URLQueryItem(name: parameter.key, value: String(describing: parameter.value))
-                urlComponents.queryItems?.append(queryItem)
+                queryItems.append(queryItem)
             }
         }
+        urlComponents.queryItems = queryItems
         
         URLSession.shared.dataTask(with: URLRequest(url: urlComponents.url!)) { (data, response, error) in
             guard let data = data else {
                 completion(nil, .missingResponse)
                 return
             }
-            
-            if let httpResponseStatusCode = (response as? HTTPURLResponse)?.statusCode, httpResponseStatusCode != 200 {
-                completion(nil, WhaleAlertError(statusCode: httpResponseStatusCode))
-            }
-            
+
             if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                 if let result = jsonObject["result"] as? String, let message = jsonObject["message"] as? String {
                     completion(nil, .other("Result: \(result) | Message: \(message)."))
                 }
+            }
+            
+            if let httpResponseStatusCode = (response as? HTTPURLResponse)?.statusCode, httpResponseStatusCode != 200 {
+                completion(nil, WhaleAlertError(statusCode: httpResponseStatusCode))
             }
             
             do {
